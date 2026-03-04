@@ -6,31 +6,31 @@
 <title>Agent Memory Architecture v4.0 — War Room Standard</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8f9fa; color: #1e1e1e; padding: 40px; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #1a1b1e; color: #c1c2c5; padding: 40px; }
   .page { max-width: 1100px; margin: 0 auto; }
   
   h1 { font-size: 28px; text-align: center; margin-bottom: 5px; }
-  .subtitle { text-align: center; color: #868e96; font-size: 14px; margin-bottom: 30px; }
+  .subtitle { text-align: center; color: #909296; font-size: 14px; margin-bottom: 30px; }
   
   /* Flow diagram */
   .flow { display: flex; flex-direction: column; align-items: center; gap: 0; }
-  .arrow { font-size: 24px; color: #495057; line-height: 1.2; }
-  .arrow-small { font-size: 18px; color: #868e96; line-height: 1; }
+  .arrow { font-size: 24px; color: #909296; line-height: 1.2; }
+  .arrow-small { font-size: 18px; color: #909296; line-height: 1; }
   
   .node { border-radius: 12px; padding: 16px 24px; text-align: center; width: fit-content; min-width: 280px; }
   .node h3 { font-size: 16px; margin-bottom: 6px; }
   .node p { font-size: 12px; line-height: 1.5; }
-  .node .detail { font-size: 11px; color: #495057; margin-top: 4px; }
+  .node .detail { font-size: 11px; color: #909296; margin-top: 4px; }
   
-  .tom { background: #ffe8cc; border: 2px solid #1e1e1e; border-radius: 50px; padding: 12px 32px; }
-  .memory { background: #f8f0fc; border: 2px solid #862e9c; }
-  .memory h3 { color: #862e9c; }
-  .classifier { background: #e7f5ff; border: 2px solid #1971c2; min-width: 400px; }
-  .classifier h3 { color: #1971c2; }
+  .tom { background: #3d2e1a; border: 2px solid #e8a84c; border-radius: 50px; padding: 12px 32px; color: #e8a84c; }
+  .memory { background: #2d1f3d; border: 2px solid #b37ed8; }
+  .memory h3 { color: #b37ed8; }
+  .classifier { background: #1a2a3d; border: 2px solid #4dabf7; min-width: 400px; }
+  .classifier h3 { color: #4dabf7; }
   .task-types { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
-  .task-type { background: white; border-radius: 6px; padding: 4px 10px; font-size: 11px; border: 1px solid #dee2e6; }
-  .decision { background: #f3f0ff; border: 2px solid #5c3d99; transform: rotate(0deg); }
-  .decision h3 { color: #5c3d99; }
+  .task-type { background: #25262b; border-radius: 6px; padding: 4px 10px; font-size: 11px; border: 1px solid #373a40; color: #c1c2c5; }
+  .decision { background: #2a2040; border: 2px solid #9775d4; transform: rotate(0deg); }
+  .decision h3 { color: #9775d4; }
   
   /* Firm systems row */
   .systems-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin: 10px 0; width: 100%; }
@@ -39,14 +39,14 @@
   .system-card ul { font-size: 11px; list-style: none; line-height: 1.6; }
   .system-card .source { font-size: 10px; font-weight: bold; margin-top: 6px; opacity: 0.7; }
   
-  .box-card { background: #ebfbee; border: 2px solid #2f9e44; }
-  .box-card h4 { color: #2f9e44; }
-  .clio-card { background: #fff4e6; border: 2px solid #e8590c; }
-  .clio-card h4 { color: #e8590c; }
-  .email-card { background: #d0ebff; border: 2px solid #1864ab; }
-  .email-card h4 { color: #1864ab; }
-  .reg-card { background: #e9fac8; border: 2px solid #74b816; }
-  .reg-card h4 { color: #74b816; }
+  .box-card { background: #1a2e1a; border: 2px solid #51cf66; }
+  .box-card h4 { color: #51cf66; }
+  .clio-card { background: #2e1f0a; border: 2px solid #ff922b; }
+  .clio-card h4 { color: #ff922b; }
+  .email-card { background: #0d1f33; border: 2px solid #4dabf7; }
+  .email-card h4 { color: #4dabf7; }
+  .reg-card { background: #1f2e0a; border: 2px solid #a9e34b; }
+  .reg-card h4 { color: #a9e34b; }
   
   /* Shelf tools */
   .shelf-label { text-align: center; color: #868e96; font-size: 13px; margin: 15px 0 8px; }
@@ -55,57 +55,63 @@
   .shelf-card h4 { font-size: 12px; margin-bottom: 4px; }
   .shelf-card ul { font-size: 10px; list-style: none; line-height: 1.5; }
   
-  .ref-card { background: #f4fce3; border-color: #5c940d; }
-  .ref-card h4 { color: #5c940d; }
-  .ea-card { background: #fff9db; border-color: #d9480f; }
-  .ea-card h4 { color: #d9480f; }
-  .expert-card { background: #fff0f6; border-color: #c2255c; }
-  .expert-card h4 { color: #c2255c; }
-  .damages-card { background: #f3d9fa; border-color: #9c36b5; }
-  .damages-card h4 { color: #9c36b5; }
+  .ref-card { background: #1f2a10; border-color: #82c91e; }
+  .ref-card h4 { color: #82c91e; }
+  .ea-card { background: #2e1a0a; border-color: #fd7e14; }
+  .ea-card h4 { color: #fd7e14; }
+  .expert-card { background: #2e0a1f; border-color: #f06595; }
+  .expert-card h4 { color: #f06595; }
+  .damages-card { background: #2a1a33; border-color: #cc5de8; }
+  .damages-card h4 { color: #cc5de8; }
   
-  .active { background: #fff5f5; border: 2px solid #c92a2a; min-width: 450px; }
-  .active h3 { color: #c92a2a; }
-  .results { background: #d3f9d8; border: 2px solid #2f9e44; border-radius: 50px; padding: 10px 32px; }
-  .results h3 { color: #2f9e44; font-size: 14px; }
+  .active { background: #2e1010; border: 2px solid #ff6b6b; min-width: 450px; }
+  .active h3 { color: #ff6b6b; }
+  .results { background: #1a2e1a; border: 2px solid #51cf66; border-radius: 50px; padding: 10px 32px; }
+  .results h3 { color: #51cf66; font-size: 14px; }
   
-  .golden-rule { background: #fff5f5; border: 2px solid #c92a2a; border-radius: 10px; padding: 14px 24px; text-align: center; margin: 20px auto; max-width: 700px; }
-  .golden-rule p { color: #c92a2a; font-size: 14px; font-weight: 600; }
-  .golden-rule .sub { font-size: 12px; font-weight: normal; margin-top: 4px; }
+  .golden-rule { background: #2e1010; border: 2px solid #ff6b6b; border-radius: 10px; padding: 14px 24px; text-align: center; margin: 20px auto; max-width: 700px; }
+  .golden-rule p { color: #ff6b6b; font-size: 14px; font-weight: 600; }
+  .golden-rule .sub { font-size: 12px; font-weight: normal; margin-top: 4px; color: #ffa8a8; }
   
   .legend { display: flex; gap: 20px; justify-content: center; margin: 8px 0; font-size: 11px; color: #868e96; }
   .legend span { display: flex; align-items: center; gap: 4px; }
-  .legend .solid-line { width: 20px; height: 2px; background: #495057; }
-  .legend .dashed-line { width: 20px; height: 2px; border-top: 2px dashed #868e96; }
+  .legend .solid-line { width: 20px; height: 2px; background: #909296; }
+  .legend .dashed-line { width: 20px; height: 2px; border-top: 2px dashed #909296; }
   
-  .branch-arrows { display: flex; justify-content: center; gap: 80px; font-size: 18px; color: #495057; margin: 5px 0; }
+  .branch-arrows { display: flex; justify-content: center; gap: 80px; font-size: 18px; color: #909296; margin: 5px 0; }
   
   /* Routing table */
   .routing-section { margin-top: 50px; }
   .routing-section h2 { font-size: 22px; text-align: center; margin-bottom: 5px; }
   .routing-subtitle { text-align: center; color: #868e96; font-size: 13px; margin-bottom: 25px; }
-  .heuristic { background: #e7f5ff; border: 1px solid #1971c2; border-radius: 8px; padding: 12px 20px; text-align: center; margin: 0 auto 25px; max-width: 600px; }
-  .heuristic p { font-size: 13px; color: #1971c2; }
+  .heuristic { background: #1a2a3d; border: 1px solid #4dabf7; border-radius: 8px; padding: 12px 20px; text-align: center; margin: 0 auto 25px; max-width: 600px; }
+  .heuristic p { font-size: 13px; color: #4dabf7; }
   
   .route-category { margin-bottom: 25px; }
-  .route-category h3 { font-size: 16px; margin-bottom: 8px; padding-bottom: 4px; border-bottom: 2px solid #dee2e6; }
+  .route-category h3 { font-size: 16px; margin-bottom: 8px; padding-bottom: 4px; border-bottom: 2px solid #373a40; }
   .route-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-  .route-table th { text-align: left; background: #f1f3f5; padding: 8px 12px; font-weight: 600; }
-  .route-table td { padding: 8px 12px; border-bottom: 1px solid #e9ecef; vertical-align: top; }
-  .route-table tr:hover { background: #f8f9fa; }
+  .route-table th { text-align: left; background: #25262b; padding: 8px 12px; font-weight: 600; color: #c1c2c5; }
+  .route-table td { padding: 8px 12px; border-bottom: 1px solid #373a40; vertical-align: top; }
+  .route-table tr:hover { background: #2c2e33; }
   .route-tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; margin: 1px; }
-  .tag-box { background: #ebfbee; color: #2f9e44; }
-  .tag-clio { background: #fff4e6; color: #e8590c; }
-  .tag-email { background: #d0ebff; color: #1864ab; }
-  .tag-reg { background: #e9fac8; color: #74b816; }
-  .tag-ref { background: #f4fce3; color: #5c940d; border: 1px dashed #5c940d; }
-  .tag-ea { background: #fff9db; color: #d9480f; border: 1px dashed #d9480f; }
-  .tag-expert { background: #fff0f6; color: #c2255c; border: 1px dashed #c2255c; }
-  .tag-damages { background: #f3d9fa; color: #9c36b5; border: 1px dashed #9c36b5; }
-  .tag-templates { background: #e9ecef; color: #495057; border: 1px dashed #495057; }
-  .no-firm { font-style: italic; color: #868e96; font-size: 10px; }
+  .tag-box { background: #1a2e1a; color: #51cf66; }
+  .tag-clio { background: #2e1f0a; color: #ff922b; }
+  .tag-email { background: #0d1f33; color: #4dabf7; }
+  .tag-reg { background: #1f2e0a; color: #a9e34b; }
+  .tag-ref { background: #1f2a10; color: #82c91e; border: 1px dashed #82c91e; }
+  .tag-ea { background: #2e1a0a; color: #fd7e14; border: 1px dashed #fd7e14; }
+  .tag-expert { background: #2e0a1f; color: #f06595; border: 1px dashed #f06595; }
+  .tag-damages { background: #2a1a33; color: #cc5de8; border: 1px dashed #cc5de8; }
+  .tag-templates { background: #25262b; color: #909296; border: 1px dashed #909296; }
+  .no-firm { font-style: italic; color: #909296; font-size: 10px; }
   
-  .footer { text-align: center; margin-top: 40px; color: #868e96; font-size: 12px; }
+  .footer { text-align: center; margin-top: 40px; color: #909296; font-size: 12px; }
+  h1 { color: #e1e2e5; }
+  .routing-section h2 { color: #e1e2e5; }
+  .system-card ul { color: #adb5bd; }
+  .shelf-card ul { color: #adb5bd; }
+  .system-card .source { color: inherit; }
+  .node p { color: #adb5bd; }
 </style>
 </head>
 <body>
