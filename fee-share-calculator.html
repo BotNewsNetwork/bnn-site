@@ -11,81 +11,82 @@
   h1 { color: #e1e2e5; font-size: 22px; text-align: center; margin-bottom: 4px; }
   .subtitle { text-align: center; color: #909296; font-size: 13px; margin-bottom: 20px; }
   
-  /* Overhead section */
-  .overhead-section { background: #25262b; border: 1px solid #373a40; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
-  .overhead-section h2 { color: #ff922b; font-size: 16px; margin-bottom: 12px; }
-  .overhead-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; }
-  .overhead-grid label { font-size: 12px; color: #909296; display: block; margin-bottom: 3px; }
-  .overhead-grid input { width: 100%; background: #1a1b1e; border: 1px solid #373a40; color: #e1e2e5; padding: 8px 10px; border-radius: 6px; font-size: 14px; }
-  .overhead-total { margin-top: 12px; padding-top: 12px; border-top: 1px solid #373a40; font-size: 15px; color: #ff922b; font-weight: 600; }
+  .section { background: #25262b; border: 1px solid #373a40; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+  .section h2 { font-size: 16px; margin-bottom: 12px; }
   
-  /* Fee split input */
-  .split-section { background: #25262b; border: 1px solid #373a40; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
-  .split-section h2 { color: #4dabf7; font-size: 16px; margin-bottom: 8px; }
-  .split-row { display: flex; gap: 12px; align-items: center; }
-  .split-row label { font-size: 13px; color: #909296; white-space: nowrap; }
-  .split-row input { width: 80px; background: #1a1b1e; border: 1px solid #373a40; color: #e1e2e5; padding: 8px 10px; border-radius: 6px; font-size: 14px; text-align: center; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px 20px; }
+  label { font-size: 12px; color: #909296; display: block; margin-bottom: 3px; }
+  input[type=number], select { width: 100%; background: #1a1b1e; border: 1px solid #373a40; color: #e1e2e5; padding: 8px 10px; border-radius: 6px; font-size: 14px; }
+  input:focus { border-color: #4dabf7; outline: none; }
+  
+  .total-line { margin-top: 12px; padding-top: 12px; border-top: 1px solid #373a40; font-size: 15px; font-weight: 600; }
+  
+  .split-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .split-row label { white-space: nowrap; font-size: 13px; }
+  .split-row input { width: 80px; text-align: center; }
   .split-note { font-size: 11px; color: #909296; margin-top: 6px; }
   
-  /* Case table */
-  .cases-section { background: #25262b; border: 1px solid #373a40; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; overflow-x: auto; }
-  .cases-section h2 { color: #51cf66; font-size: 16px; margin-bottom: 12px; }
-  
+  .cases-section { overflow-x: auto; }
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  th { text-align: left; padding: 8px 6px; background: #1a1b1e; color: #909296; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+  th { text-align: left; padding: 8px 6px; background: #1a1b1e; color: #909296; font-weight: 600; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
   td { padding: 6px; border-bottom: 1px solid #2c2e33; vertical-align: middle; }
-  .case-name { color: #e1e2e5; font-weight: 600; min-width: 90px; }
+  .case-name { color: #e1e2e5; font-weight: 600; min-width: 85px; font-size: 12px; }
+  input.cell { width: 100%; background: #1a1b1e; border: 1px solid #373a40; color: #e1e2e5; padding: 5px 6px; border-radius: 4px; font-size: 12px; text-align: right; min-width: 70px; }
+  .calc { color: #ffd43b; font-weight: 600; text-align: right; font-size: 12px; }
+  .calc-g { color: #51cf66; font-weight: 600; text-align: right; font-size: 12px; }
+  .calc-o { color: #ff922b; font-weight: 600; text-align: right; font-size: 12px; }
+  tr.totals td { border-top: 2px solid #4dabf7; padding-top: 10px; font-weight: 700; font-size: 13px; }
   
-  input.cell { width: 100%; background: #1a1b1e; border: 1px solid #373a40; color: #e1e2e5; padding: 6px 8px; border-radius: 4px; font-size: 13px; text-align: right; min-width: 80px; }
-  input.cell:focus { border-color: #4dabf7; outline: none; }
-  input.cell.hours { min-width: 60px; }
-  
-  .calc { color: #ffd43b; font-weight: 600; text-align: right; font-size: 13px; }
-  .calc-green { color: #51cf66; font-weight: 600; text-align: right; }
-  .calc-red { color: #ff6b6b; font-weight: 600; text-align: right; }
-  .calc-blue { color: #4dabf7; font-weight: 600; text-align: right; }
-  
-  /* Totals row */
-  tr.totals td { border-top: 2px solid #4dabf7; padding-top: 10px; font-weight: 700; font-size: 14px; }
-  
-  /* Results dashboard */
   .results { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
   .result-card { border-radius: 10px; padding: 18px 20px; text-align: center; }
   .result-card h3 { font-size: 14px; margin-bottom: 8px; }
-  .result-card .big-num { font-size: 32px; font-weight: 700; margin: 8px 0; }
-  .result-card .detail { font-size: 12px; line-height: 1.6; }
-  
+  .result-card .big-num { font-size: 28px; font-weight: 700; margin: 6px 0; }
+  .result-card .detail { font-size: 12px; line-height: 1.7; }
   .tom-card { background: #1a2e1a; border: 2px solid #51cf66; }
-  .tom-card h3 { color: #51cf66; }
-  .tom-card .big-num { color: #51cf66; }
+  .tom-card h3, .tom-card .big-num { color: #51cf66; }
   .tom-card .detail { color: #8fbc8f; }
-  
   .andrew-card { background: #2e1f0a; border: 2px solid #ff922b; }
-  .andrew-card h3 { color: #ff922b; }
-  .andrew-card .big-num { color: #ff922b; }
+  .andrew-card h3, .andrew-card .big-num { color: #ff922b; }
   .andrew-card .detail { color: #d4a574; }
   
-  /* Verdict box */
-  .verdict { background: #2e1010; border: 2px solid #ff6b6b; border-radius: 10px; padding: 18px 24px; text-align: center; margin-bottom: 20px; }
-  .verdict h3 { color: #ff6b6b; font-size: 16px; margin-bottom: 8px; }
-  .verdict .ratio { font-size: 36px; font-weight: 700; color: #ffd43b; }
-  .verdict .explain { font-size: 13px; color: #ffa8a8; margin-top: 8px; line-height: 1.5; }
+  .verdict { border-radius: 10px; padding: 18px 24px; text-align: center; margin-bottom: 20px; }
+  .verdict h3 { font-size: 16px; margin-bottom: 8px; }
+  .verdict .ratio { font-size: 36px; font-weight: 700; }
+  .verdict .explain { font-size: 13px; margin-top: 8px; line-height: 1.5; }
   
-  /* Scenario slider */
+  .v-hours { background: #2e1010; border: 2px solid #ff6b6b; }
+  .v-hours h3 { color: #ff6b6b; }
+  .v-hours .ratio { color: #ffd43b; }
+  .v-hours .explain { color: #ffa8a8; }
+  
+  .v-risk { background: #1a1a2e; border: 2px solid #845ef7; }
+  .v-risk h3 { color: #845ef7; }
+  .v-risk .ratio { color: #b197fc; }
+  .v-risk .explain { color: #9775d4; }
+  
   .scenario { background: #1a2a3d; border: 1px solid #4dabf7; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; text-align: center; }
   .scenario h3 { color: #4dabf7; font-size: 14px; margin-bottom: 10px; }
   .scenario input[type=range] { width: 80%; margin: 8px 0; accent-color: #4dabf7; }
-  .scenario .scenario-output { font-size: 14px; color: #e1e2e5; margin-top: 8px; }
   .scenario .scenario-num { font-size: 24px; font-weight: 700; color: #4dabf7; }
+  
+  .history { background: #1e2a1e; border: 1px solid #51cf66; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+  .history h2 { color: #51cf66; font-size: 16px; margin-bottom: 8px; }
+  .history .big { font-size: 28px; font-weight: 700; color: #ffd43b; }
+  .history .detail { font-size: 13px; color: #8fbc8f; line-height: 1.7; margin-top: 8px; }
+  
+  .toggle-row { display: flex; gap: 8px; align-items: center; margin-bottom: 10px; }
+  .toggle-row input[type=checkbox] { accent-color: #4dabf7; width: 16px; height: 16px; }
+  .toggle-row label { font-size: 13px; color: #c1c2c5; cursor: pointer; }
   
   .footer { text-align: center; margin-top: 24px; color: #555; font-size: 11px; }
   .priv { text-align: center; color: #ff6b6b; font-size: 11px; font-weight: 600; margin-bottom: 16px; }
   
   @media (max-width: 700px) {
-    .overhead-grid { grid-template-columns: 1fr; }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
     .results { grid-template-columns: 1fr; }
     table { font-size: 11px; }
-    input.cell { font-size: 11px; padding: 4px 6px; min-width: 60px; }
+    input.cell { font-size: 11px; padding: 4px 5px; min-width: 55px; }
   }
 </style>
 </head>
@@ -93,47 +94,69 @@
 <div class="page">
 
 <h1>💰 Fee Share Analysis</h1>
-<p class="subtitle">Collins (18%) / MDX Law (82%) — 12 Shared Cases</p>
+<p class="subtitle">Collins (18%) / MDX Law — Active + Historical</p>
 <p class="priv">⚠️ ATTORNEY-CLIENT PRIVILEGED / WORK PRODUCT — DO NOT DISTRIBUTE</p>
 
-<!-- OVERHEAD -->
-<div class="overhead-section">
-  <h2>🏢 MDX Law Monthly Overhead</h2>
-  <p style="font-size:12px; color:#909296; margin-bottom:10px;">Enter your firm's monthly costs. Andrew's overhead is assumed near-zero (no office, no staff).</p>
-  <div class="overhead-grid">
-    <div><label>Office Rent / mo</label><input type="number" id="oh-rent" value="0" oninput="recalc()"></div>
-    <div><label>Staff Salaries / mo</label><input type="number" id="oh-staff" value="0" oninput="recalc()"></div>
-    <div><label>Insurance (PI, health, etc.) / mo</label><input type="number" id="oh-ins" value="0" oninput="recalc()"></div>
-    <div><label>Tech / Software / mo</label><input type="number" id="oh-tech" value="0" oninput="recalc()"></div>
-    <div><label>Bar Dues / CLE / mo</label><input type="number" id="oh-bar" value="0" oninput="recalc()"></div>
-    <div><label>Other Overhead / mo</label><input type="number" id="oh-other" value="0" oninput="recalc()"></div>
+<!-- HISTORICAL -->
+<div class="history">
+  <h2>📊 Historical Payments to Collins (Feb 2023 – Mar 2026)</h2>
+  <div class="grid-3">
+    <div><label>Total paid to date</label><input type="number" id="hist-paid" value="617000" oninput="recalc()"></div>
+    <div><label>Months of relationship</label><input type="number" id="hist-months" value="25" oninput="recalc()"></div>
+    <div><label>Andrew's avg hrs/week (est)</label><input type="number" id="hist-hrs-wk" value="20" oninput="recalc()"></div>
   </div>
-  <div class="overhead-total">Annual Overhead: $<span id="oh-annual">0</span></div>
+  <div class="detail" style="margin-top:12px">
+    Monthly avg: <strong>$<span id="hist-monthly">0</span>/mo</strong> &nbsp;|&nbsp;
+    Annual rate: <strong>$<span id="hist-annual">0</span>/yr</strong> &nbsp;|&nbsp;
+    Est. effective rate: <strong class="big" style="font-size:18px">$<span id="hist-rate">0</span>/hr</strong>
+  </div>
+</div>
+
+<!-- OVERHEAD -->
+<div class="section">
+  <h2 style="color:#ff922b">🏢 MDX Law Overhead</h2>
+  <div class="grid-2">
+    <div><label>Total monthly overhead (all practice areas)</label><input type="number" id="oh-total" value="83000" oninput="recalc()"></div>
+    <div><label>Annual case costs advanced by firm</label><input type="number" id="case-costs" value="333000" oninput="recalc()"></div>
+  </div>
+  <div class="toggle-row" style="margin-top:12px">
+    <input type="checkbox" id="oh-full" checked oninput="recalc()">
+    <label for="oh-full"><strong>Use 100% overhead</strong> (Tom + Jordan carry all risk; Andrew benefits from PI/WC subsidy)</label>
+  </div>
+  <div id="apportion-row" class="grid-2" style="display:none; margin-top:8px;">
+    <div><label>EA share of firm overhead (%)</label><input type="number" id="oh-ea-pct" value="50" min="0" max="100" oninput="recalc()"></div>
+  </div>
+  <div class="total-line" style="color:#ff922b">
+    Overhead applied: $<span id="oh-applied">0</span>/yr &nbsp;+&nbsp; Case costs at risk: $<span id="cc-display">0</span>/yr &nbsp;=&nbsp; <strong>Total risk: $<span id="total-risk">0</span>/yr</strong>
+  </div>
 </div>
 
 <!-- FEE SPLIT -->
-<div class="split-section">
-  <h2>📐 Fee Split</h2>
+<div class="section">
+  <h2 style="color:#4dabf7">📐 Fee Split</h2>
   <div class="split-row">
     <label>Collins gets:</label>
     <input type="number" id="split-pct" value="18" min="0" max="100" oninput="recalc()">
-    <label>%&nbsp;&nbsp;&nbsp;MDX gets:</label>
+    <label>% &nbsp; MDX gets:</label>
     <span id="split-mdx" style="color:#51cf66; font-weight:600; font-size:16px;">82%</span>
+    <label style="margin-left:20px">Contingency %:</label>
+    <input type="number" id="cont-pct" value="40" min="0" max="100" oninput="recalc()" style="width:60px">
+    <label>%</label>
   </div>
-  <p class="split-note">Adjust to model scenarios (e.g., what if 12%? 10%? 8%?)</p>
+  <p class="split-note">Per agreement: 18% of net attorney fees after referral fees & costs. Adjust split or contingency to model scenarios.</p>
 </div>
 
 <!-- CASE TABLE -->
-<div class="cases-section">
-  <h2>📋 Cases (Attachment 1)</h2>
-  <p style="font-size:11px; color:#909296; margin-bottom:10px;">Enter settlement/projected values and estimated hours per case. Calculated fields update live.</p>
+<div class="section cases-section">
+  <h2 style="color:#51cf66">📋 Active Cases (Attachment 1) — Future Pipeline</h2>
+  <p style="font-size:11px; color:#909296; margin-bottom:10px;">Enter projected settlement values, costs advanced, referral fees, and hour estimates.</p>
   <table id="case-table">
     <thead>
       <tr>
         <th>Case</th>
         <th>Settlement $</th>
-        <th>Costs $</th>
-        <th>Referral Fee $</th>
+        <th>Costs Adv. $</th>
+        <th>Referral $</th>
         <th>Net Fees</th>
         <th>Tom Hrs</th>
         <th>Andrew Hrs</th>
@@ -151,23 +174,24 @@
         <td class="calc" id="tot-netfees">—</td>
         <td class="calc" id="tot-tom-hrs">—</td>
         <td class="calc" id="tot-andrew-hrs">—</td>
-        <td class="calc" style="color:#ff922b" id="tot-collins">—</td>
-        <td class="calc-green" id="tot-mdx">—</td>
+        <td class="calc-o" id="tot-collins">—</td>
+        <td class="calc-g" id="tot-mdx">—</td>
       </tr>
     </tfoot>
   </table>
 </div>
 
-<!-- RESULTS -->
+<!-- RESULTS: BASIC -->
 <div class="results">
   <div class="result-card tom-card">
     <h3>👤 Tom / MDX Law</h3>
     <div class="big-num" id="tom-rate">$0/hr</div>
     <div class="detail">
-      Gross take: $<span id="tom-gross">0</span><br>
+      Gross from cases: $<span id="tom-gross">0</span><br>
       Minus overhead: $<span id="tom-overhead">0</span><br>
       <strong>Net take-home: $<span id="tom-net">0</span></strong><br>
-      Total hours: <span id="tom-hrs-total">0</span>
+      Total hours: <span id="tom-hrs-total">0</span><br>
+      <em>Effective hourly (after overhead)</em>
     </div>
   </div>
   <div class="result-card andrew-card">
@@ -177,28 +201,51 @@
       Gross take: $<span id="andrew-gross">0</span><br>
       Overhead: ~$0 (no office/staff)<br>
       <strong>Net take-home: $<span id="andrew-net">0</span></strong><br>
-      Total hours: <span id="andrew-hrs-total">0</span>
+      Total hours: <span id="andrew-hrs-total">0</span><br>
+      <em>Effective hourly (pure take-home)</em>
     </div>
   </div>
 </div>
 
-<!-- VERDICT -->
-<div class="verdict">
+<!-- VERDICT: HOURLY -->
+<div class="verdict v-hours">
   <h3>⚖️ Effective Hourly Rate Ratio</h3>
   <div class="ratio" id="ratio">—</div>
   <div class="explain" id="ratio-explain">Enter case data above to see the comparison</div>
 </div>
 
-<!-- SCENARIO SLIDER -->
-<div class="scenario">
-  <h3>🎚️ What If? — Adjust Collins' Percentage</h3>
-  <input type="range" id="scenario-slider" min="0" max="30" value="18" oninput="sliderChange()">
-  <div class="scenario-output">
-    At <span class="scenario-num" id="scenario-pct">18%</span>, Collins earns $<span id="scenario-collins">0</span> → <strong>$<span id="scenario-rate">0</span>/hr</strong>
+<!-- VERDICT: RISK-ADJUSTED -->
+<div class="verdict v-risk">
+  <h3>🛡️ Risk-Adjusted View</h3>
+  <div class="ratio" id="risk-ratio">—</div>
+  <div class="explain" id="risk-explain">
+    This factors in capital at risk. Tom + Jordan put $<span id="risk-capital">0</span>/yr on the line (overhead + case costs). Andrew risks $0.<br>
+    <span id="risk-detail"></span>
   </div>
 </div>
 
-<p class="footer">🌀 Built by Ummon — War Room — March 18, 2026<br>All data entered locally. Nothing transmitted. This page runs entirely in your browser.</p>
+<!-- SCENARIO SLIDER -->
+<div class="scenario">
+  <h3>🎚️ What If? — Find the Fair Percentage</h3>
+  <input type="range" id="scenario-slider" min="0" max="30" value="18" oninput="sliderChange()">
+  <div style="font-size:14px; color:#e1e2e5; margin-top:8px;">
+    At <span class="scenario-num" id="scenario-pct">18%</span>:<br>
+    Collins earns $<span id="scenario-collins">0</span> → <strong>$<span id="scenario-rate">0</span>/hr</strong><br>
+    Tom nets $<span id="scenario-tom">0</span> → <strong>$<span id="scenario-tom-rate">0</span>/hr</strong><br>
+    Ratio: <strong><span id="scenario-ratio">—</span></strong>
+  </div>
+</div>
+
+<!-- BREAKEVEN -->
+<div class="section" style="border-color: #845ef7; text-align: center;">
+  <h2 style="color:#845ef7">🎯 Breakeven: What % Makes Them Equal?</h2>
+  <div style="font-size: 18px; margin-top: 10px;">
+    For equal effective hourly rates, Collins should get: <strong style="color:#ffd43b; font-size: 28px;" id="breakeven-pct">—</strong>
+  </div>
+  <div style="font-size: 12px; color: #909296; margin-top: 6px;" id="breakeven-note"></div>
+</div>
+
+<p class="footer">🌀 Built by Ummon — War Room — March 18, 2026<br>All data entered locally. Nothing transmitted. Runs entirely in your browser.</p>
 
 </div>
 
@@ -218,13 +265,19 @@ function init() {
       <td><input class="cell" type="number" id="c-${i}" value="0" oninput="recalc()"></td>
       <td><input class="cell" type="number" id="r-${i}" value="0" oninput="recalc()"></td>
       <td class="calc" id="nf-${i}">—</td>
-      <td><input class="cell hours" type="number" id="th-${i}" value="0" oninput="recalc()"></td>
-      <td><input class="cell hours" type="number" id="ah-${i}" value="0" oninput="recalc()"></td>
-      <td class="calc" style="color:#ff922b" id="cf-${i}">—</td>
-      <td class="calc-green" id="mf-${i}">—</td>
+      <td><input class="cell" type="number" id="th-${i}" value="0" oninput="recalc()"></td>
+      <td><input class="cell" type="number" id="ah-${i}" value="0" oninput="recalc()"></td>
+      <td class="calc-o" id="cf-${i}">—</td>
+      <td class="calc-g" id="mf-${i}">—</td>
     `;
     tbody.appendChild(tr);
   });
+  
+  document.getElementById('oh-full').addEventListener('change', function() {
+    document.getElementById('apportion-row').style.display = this.checked ? 'none' : 'grid';
+    recalc();
+  });
+  
   recalc();
 }
 
@@ -233,37 +286,52 @@ function fmt(n) { return n.toLocaleString('en-US', {maximumFractionDigits: 0}); 
 
 function recalc() {
   const pct = num('split-pct') / 100;
+  const contPct = num('cont-pct') / 100;
   document.getElementById('split-mdx').textContent = (100 - num('split-pct')) + '%';
   
-  const ohAnnual = (num('oh-rent') + num('oh-staff') + num('oh-ins') + num('oh-tech') + num('oh-bar') + num('oh-other')) * 12;
-  document.getElementById('oh-annual').textContent = fmt(ohAnnual);
+  // Overhead
+  const fullOH = num('oh-total') * 12;
+  const useFull = document.getElementById('oh-full').checked;
+  const eaPct = useFull ? 1 : (num('oh-ea-pct') / 100);
+  const ohApplied = fullOH * eaPct;
+  const caseCosts = num('case-costs');
+  const totalRisk = ohApplied + caseCosts;
   
+  document.getElementById('oh-applied').textContent = fmt(ohApplied);
+  document.getElementById('cc-display').textContent = fmt(caseCosts);
+  document.getElementById('total-risk').textContent = fmt(totalRisk);
+  document.getElementById('risk-capital').textContent = fmt(totalRisk);
+  
+  // Historical
+  const histPaid = num('hist-paid');
+  const histMonths = num('hist-months') || 1;
+  const histHrsWk = num('hist-hrs-wk') || 1;
+  const histMonthly = histPaid / histMonths;
+  const histAnnual = histMonthly * 12;
+  const histTotalHrs = histHrsWk * 4.33 * histMonths;
+  const histRate = histPaid / histTotalHrs;
+  document.getElementById('hist-monthly').textContent = fmt(histMonthly);
+  document.getElementById('hist-annual').textContent = fmt(histAnnual);
+  document.getElementById('hist-rate').textContent = fmt(histRate);
+  
+  // Cases
   let totS=0, totC=0, totR=0, totNF=0, totTH=0, totAH=0, totCF=0, totMF=0;
   
   cases.forEach((_, i) => {
     const settlement = num(`s-${i}`);
     const costs = num(`c-${i}`);
     const referral = num(`r-${i}`);
-    // Net fees = (settlement * 0.40) - referral, then minus costs from settlement
-    // Actually: contingency fee on gross, then subtract referral fees
-    // Standard: attorney fees = settlement * contingency% ; then net = fees - referral fees
-    // Client gets: settlement - fees - costs
-    // Per agreement: 18% of collected attorney fees after deduction of referral fees and reimbursement costs
-    const grossFees = settlement * 0.40; // assuming 40% contingency
-    const netFees = grossFees - referral; // net after referral
-    // Note: "reimbursement costs" come out of client share typically, but agreement says after costs too
-    // Let's keep it simple: net fees = gross fees - referral - costs (per agreement language)
-    const netFeesAfterCosts = Math.max(0, grossFees - referral);
+    const grossFees = settlement * contPct;
+    const netFees = Math.max(0, grossFees - referral);
+    const collinsFee = netFees * pct;
+    const mdxFee = netFees * (1 - pct);
     
-    const collinsFee = netFeesAfterCosts * pct;
-    const mdxFee = netFeesAfterCosts * (1 - pct);
-    
-    document.getElementById(`nf-${i}`).textContent = '$' + fmt(netFeesAfterCosts);
-    document.getElementById(`cf-${i}`).textContent = '$' + fmt(collinsFee);
-    document.getElementById(`mf-${i}`).textContent = '$' + fmt(mdxFee);
+    document.getElementById(`nf-${i}`).textContent = settlement > 0 ? '$' + fmt(netFees) : '—';
+    document.getElementById(`cf-${i}`).textContent = settlement > 0 ? '$' + fmt(collinsFee) : '—';
+    document.getElementById(`mf-${i}`).textContent = settlement > 0 ? '$' + fmt(mdxFee) : '—';
     
     totS += settlement; totC += costs; totR += referral;
-    totNF += netFeesAfterCosts;
+    totNF += netFees;
     totTH += num(`th-${i}`); totAH += num(`ah-${i}`);
     totCF += collinsFee; totMF += mdxFee;
   });
@@ -277,48 +345,125 @@ function recalc() {
   document.getElementById('tot-collins').textContent = '$' + fmt(totCF);
   document.getElementById('tot-mdx').textContent = '$' + fmt(totMF);
   
-  // Results cards
-  const tomNet = totMF - ohAnnual;
+  // Results
+  const tomNet = totMF - ohApplied;
   const tomRate = totTH > 0 ? tomNet / totTH : 0;
   const andrewRate = totAH > 0 ? totCF / totAH : 0;
   
   document.getElementById('tom-gross').textContent = fmt(totMF);
-  document.getElementById('tom-overhead').textContent = fmt(ohAnnual);
+  document.getElementById('tom-overhead').textContent = fmt(ohApplied);
   document.getElementById('tom-net').textContent = fmt(tomNet);
   document.getElementById('tom-hrs-total').textContent = fmt(totTH);
-  document.getElementById('tom-rate').textContent = '$' + fmt(tomRate) + '/hr';
+  document.getElementById('tom-rate').textContent = '$' + fmt(Math.max(0,tomRate)) + '/hr';
   
   document.getElementById('andrew-gross').textContent = fmt(totCF);
   document.getElementById('andrew-net').textContent = fmt(totCF);
   document.getElementById('andrew-hrs-total').textContent = fmt(totAH);
   document.getElementById('andrew-rate').textContent = '$' + fmt(andrewRate) + '/hr';
   
-  // Ratio
+  // Hourly ratio
   if (tomRate > 0 && andrewRate > 0) {
     const r = andrewRate / tomRate;
     document.getElementById('ratio').textContent = r.toFixed(1) + 'x';
-    if (r > 1) {
-      document.getElementById('ratio-explain').textContent = 
-        `Andrew's effective rate is ${r.toFixed(1)}x Tom's. For every $1/hr Tom makes after overhead, Andrew makes $${r.toFixed(2)}.`;
-    } else {
-      document.getElementById('ratio-explain').textContent = 
-        `Tom's effective rate is ${(1/r).toFixed(1)}x Andrew's. The split appears fair or favorable to Tom.`;
-    }
+    document.getElementById('ratio-explain').textContent = r > 1 
+      ? `Andrew's effective rate is ${r.toFixed(1)}× Tom's. For every $1/hr Tom nets, Andrew nets $${r.toFixed(2)}.`
+      : `Tom's effective rate is ${(1/r).toFixed(1)}× Andrew's. The current split favors Tom.`;
   } else {
     document.getElementById('ratio').textContent = '—';
-    document.getElementById('ratio-explain').textContent = 'Enter hours and case values to see the comparison';
+    document.getElementById('ratio-explain').textContent = 'Enter hours and case values to see the comparison.';
   }
   
-  // Scenario slider sync
-  document.getElementById('scenario-slider').value = num('split-pct');
-  document.getElementById('scenario-pct').textContent = num('split-pct') + '%';
-  document.getElementById('scenario-collins').textContent = fmt(totCF);
-  document.getElementById('scenario-rate').textContent = totAH > 0 ? fmt(totCF / totAH) : '0';
+  // Risk-adjusted ratio
+  // Tom's risk-adjusted return = (net take-home) / (capital at risk) = ROI
+  // Andrew's = take-home / $0 risk = infinite technically
+  // Better framing: what % of total value created goes to each, vs what % of risk each bears
+  if (totNF > 0 && totalRisk > 0) {
+    const tomShareOfFees = ((1-pct) * 100).toFixed(0);
+    const andrewShareOfFees = (pct * 100).toFixed(0);
+    const tomShareOfRisk = 100; // Tom bears 100% of risk
+    const andrewShareOfRisk = 0;
+    
+    const riskRatio = totalRisk > 0 ? totCF / (totalRisk * (totCF + totMF) / totNF) : 0;
+    
+    document.getElementById('risk-ratio').textContent = `${andrewShareOfFees}% reward / 0% risk`;
+    document.getElementById('risk-detail').innerHTML = 
+      `Tom + Jordan: <strong>${tomShareOfFees}% of fees, 100% of risk ($${fmt(totalRisk)}/yr)</strong><br>` +
+      `Andrew: <strong>${andrewShareOfFees}% of fees, 0% of risk ($0/yr)</strong><br>` +
+      `Collins' pay ($${fmt(totCF)}) = ${totalRisk > 0 ? (totCF/totalRisk*100).toFixed(1) : 0}% of the capital Tom puts at risk annually`;
+  } else {
+    document.getElementById('risk-ratio').textContent = '—';
+    document.getElementById('risk-detail').textContent = 'Enter case values to see risk analysis.';
+  }
+  
+  // Scenario
+  updateScenario();
+  
+  // Breakeven
+  if (totTH > 0 && totAH > 0 && totNF > 0) {
+    // Find pct where tomRate == andrewRate
+    // andrewRate = (totNF * p) / totAH
+    // tomRate = (totNF * (1-p) - ohApplied) / totTH
+    // Set equal: (totNF * p) / totAH = (totNF * (1-p) - ohApplied) / totTH
+    // totNF * p * totTH = totAH * (totNF * (1-p) - ohApplied)
+    // totNF * p * totTH = totAH * totNF - totAH * totNF * p - totAH * ohApplied
+    // totNF * p * totTH + totAH * totNF * p = totAH * totNF - totAH * ohApplied
+    // p * totNF * (totTH + totAH) = totAH * (totNF - ohApplied)
+    // p = totAH * (totNF - ohApplied) / (totNF * (totTH + totAH))
+    const fairP = (totAH * (totNF - ohApplied)) / (totNF * (totTH + totAH));
+    if (fairP > 0 && fairP < 1) {
+      document.getElementById('breakeven-pct').textContent = (fairP * 100).toFixed(1) + '%';
+      document.getElementById('breakeven-note').textContent = 
+        `At ${(fairP*100).toFixed(1)}%, both attorneys would earn the same effective hourly rate after overhead. Currently at ${num('split-pct')}%.`;
+    } else if (fairP <= 0) {
+      document.getElementById('breakeven-pct').textContent = '0%';
+      document.getElementById('breakeven-note').textContent = 'Overhead exceeds fee pool — no positive split makes them equal.';
+    } else {
+      document.getElementById('breakeven-pct').textContent = '—';
+      document.getElementById('breakeven-note').textContent = 'Cannot compute — check inputs.';
+    }
+  } else {
+    document.getElementById('breakeven-pct').textContent = '—';
+    document.getElementById('breakeven-note').textContent = 'Enter hours for both attorneys to calculate breakeven.';
+  }
+}
+
+function updateScenario() {
+  const val = num('split-pct');
+  document.getElementById('scenario-slider').value = val;
+  document.getElementById('scenario-pct').textContent = val + '%';
+  
+  let totNF=0, totTH=0, totAH=0;
+  cases.forEach((_, i) => {
+    const s = num(`s-${i}`);
+    const r = num(`r-${i}`);
+    totNF += Math.max(0, s * (num('cont-pct')/100) - r);
+    totTH += num(`th-${i}`);
+    totAH += num(`ah-${i}`);
+  });
+  
+  const pct = val / 100;
+  const cf = totNF * pct;
+  const mf = totNF * (1-pct);
+  const useFull = document.getElementById('oh-full').checked;
+  const eaPct = useFull ? 1 : (num('oh-ea-pct') / 100);
+  const oh = num('oh-total') * 12 * eaPct;
+  const tomN = mf - oh;
+  
+  document.getElementById('scenario-collins').textContent = fmt(cf);
+  document.getElementById('scenario-rate').textContent = totAH > 0 ? fmt(cf/totAH) : '0';
+  document.getElementById('scenario-tom').textContent = fmt(tomN);
+  document.getElementById('scenario-tom-rate').textContent = totTH > 0 ? fmt(tomN/totTH) : '0';
+  
+  if (totTH > 0 && totAH > 0 && cf > 0 && tomN > 0) {
+    const r = (cf/totAH) / (tomN/totTH);
+    document.getElementById('scenario-ratio').textContent = r.toFixed(1) + '× (Andrew:Tom)';
+  } else {
+    document.getElementById('scenario-ratio').textContent = '—';
+  }
 }
 
 function sliderChange() {
-  const val = document.getElementById('scenario-slider').value;
-  document.getElementById('split-pct').value = val;
+  document.getElementById('split-pct').value = document.getElementById('scenario-slider').value;
   recalc();
 }
 
